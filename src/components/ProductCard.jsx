@@ -2,6 +2,15 @@ import React from 'react'
 
 function ProductCard(props) {
   const {product, addToCart} = props
+  const hdlClick = () => {
+    const cartItem = { 
+      id : product.id,
+      title: product.title,
+      price: product.price,
+      quantity: 1
+     }
+    addToCart(cartItem)
+  }
   return (
     <div className="card bg-base-100 w-60 h-[420px] shadow-sm">
       <figure className='p-2 h-1/2 mt-2'>
@@ -15,7 +24,7 @@ function ProductCard(props) {
         <p className='line-clamp-3 tracking-wide'>{product.description}</p>
         <div className="card-actions justify-end items-end">
           <p className='text-red-400 text-lg'>{product.price}THB</p>
-          <button className="btn btn-sm btn-primary" onClick={addToCart}>Add to Cart</button>
+          <button className="btn btn-sm btn-primary" onClick={hdlClick}>Add to Cart</button>
         </div>
       </div>
     </div>

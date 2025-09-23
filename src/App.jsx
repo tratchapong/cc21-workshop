@@ -7,8 +7,12 @@ import ProductList from "./components/ProductList"
 function App() {
   const [cart, setCart] = useState([])
 
-  const addToCart = () => {
-    alert('add to Cart')
+  const addToCart = (cartItem) => {
+    // alert(JSON.stringify(cartItem,null,2))
+    let idx = cart.findIndex(el => cartItem.id === el.id)
+    if (idx === -1) {
+      setCart([...cart, cartItem])
+    }   
   }
 
  return (
