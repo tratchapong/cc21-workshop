@@ -15,12 +15,23 @@ function App() {
     }   
   }
 
+  const updateQuantity = (id, step) => {
+    let idx = cart.findIndex(el=> id===el.id)
+    // alert(idx)    
+    const newCart = [...cart]
+    newCart[idx].quantity += step
+    if(newCart[idx].quantity <= 0) {
+      newCart.splice(idx, 1)
+    }
+    setCart(newCart)
+  }
+
  return (
    <div className="h-screen max-w-7xl bg-pink-300 mx-auto">
     <Header itemCount={cart.length}/>
     <div className="flex bg-amber-100 h-11/12">
       <ProductList addToCart={addToCart}/>
-      <CartSummary cart={cart}/>
+      <CartSummary cart={cart} updateQuantity={updateQuantity}/>
     </div>
 
    </div>
