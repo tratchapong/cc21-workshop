@@ -17,7 +17,7 @@ function CartSummary(props) {
       <div className="divider opacity-50">Total</div>
       <div className="flex justify-between px-1">
         <div className="font-bold">Total</div>
-        <p>{total}</p>
+        <p>{(total).toFixed(2)}</p>
       </div>
       <div className="flex justify-between px-1">
         <div className="font-bold">VAT</div>
