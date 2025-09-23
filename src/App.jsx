@@ -11,7 +11,7 @@ function App() {
     <Header itemCount={cart.length}/>
     <div className="flex bg-amber-100 h-11/12">
       <ProductList />
-      <CartSummary />
+      <CartSummary cart={cart}/>
     </div>
 
    </div>
