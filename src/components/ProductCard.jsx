@@ -10,7 +10,7 @@ function ProductCard(props) {
           src={product.image}
           alt={product.title} />
       </figure>
-      <div className="card-body flex-none gap-5 px-3">
+      <div className="card-body flex-none gap-5 px-3 py-4">
         <h2 className="card-title text-[16px] line-clamp-1">{product.title}</h2>
         <p className='line-clamp-3 tracking-wide'>{product.description}</p>
         <div className="card-actions justify-end items-end">
