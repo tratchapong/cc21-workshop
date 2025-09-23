@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ProductCard(props) {
-  const {product, addToCart} = props
+  const {product, addToCart, selected, removeItem} = props
   const hdlClick = () => {
     const cartItem = { 
       id : product.id,
@@ -22,9 +22,14 @@ function ProductCard(props) {
       <div className="card-body flex-none gap-5 px-3 py-4">
         <h2 className="card-title text-[16px] line-clamp-1">{product.title}</h2>
         <p className='line-clamp-3 tracking-wide'>{product.description}</p>
-        <div className="card-actions justify-end items-end">
+        <div className="card-actions justify-end items-end relative">
           <p className='text-red-400 text-lg'>{product.price}THB</p>
-          <button className="btn btn-sm btn-primary" onClick={hdlClick}>Add to Cart</button>
+          <button className="btn btn-sm btn-primary" onClick={hdlClick}
+           disabled={selected}>{selected ? 'Remove': 'Add to Cart'}</button>
+           {selected && (
+            <button onClick={()=>removeItem(product.id)}
+            className="absolute btn btn-circle btn-xs btn-dash btn-error -top-3 right-16">x</button>
+           )}
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ function CartItem(props) {
         <button className='border w-5 h-5 flex justify-center items-center'
           onClick={() => updateQuantity(item.id, +1)}>+</button>
       </div>
-      <p className='w-[5ch] text-end'>{(item.price * item.quantity).toFixed(2)}</p> </div>)
+      <p className='w-[8ch] text-end'>{(item.price * item.quantity).toFixed(2)}</p> </div>)
 } 
 
 export default CartItem

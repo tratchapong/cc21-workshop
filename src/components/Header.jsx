@@ -4,7 +4,7 @@ import CartCount from './CartCount'
 function Header(props) {
   const {itemCount} = props
   return (
-    <div className='h-1/12 flex justify-between items-center px-4'>
+    <div className='h-1/12 flex justify-between items-center px-4 border-b-3 border-pink-200'>
       <div className='h-4/5 flex items-end gap-2'>
         <img className='h-full'
          src="https://www.svgrepo.com/show/490951/shop.svg" alt="Shop" />
