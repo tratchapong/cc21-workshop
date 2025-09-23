@@ -28,7 +28,8 @@ function App() {
 
  return (
    <div className="h-screen max-w-7xl bg-pink-300 mx-auto">
-    <Header itemCount={cart.length}/>
+    {/* <Header itemCount={cart.length}/> */}
+    <Header itemCount={cart.reduce( (a,c) => a+c.quantity, 0)}/>
     <div className="flex bg-amber-100 h-11/12">
       <ProductList addToCart={addToCart}/>
       <CartSummary cart={cart} updateQuantity={updateQuantity}/>
