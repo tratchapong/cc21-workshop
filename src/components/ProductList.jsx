@@ -8,7 +8,7 @@ function ProductList(props) {
   const fetchProduct = () => {
     axios.get('https://fakestoreapi.com/products')
     .then(response => {
-      console.log(response.data)
+      // console.log(response.data)
       setProducts(response.data)
     })
   }
